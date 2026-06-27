@@ -20,27 +20,53 @@
     }
     .center-text { text-align: center; }
     .subtitle {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-variant: small-caps;
-      color: #333;
+      color: #555;
       margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+    .nav-pills a {
+      display: inline-block;
+      padding: 0.25rem 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .nav-pills a:hover {
+      background: #333;
+      color: white;
+      border-color: #333;
+      font-size: 0.9rem;
     }
     .abstract {
-      max-width: 650px;
+      max-width: 620px;
       margin: 2rem auto;
       text-align: center;
     }
     .abstract strong {
       display: block;
       margin-bottom: 0.5rem;
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+      color: #444;
     }
-    a:hover { font-size: 1.05em; }
     footer {
       text-align: center;
       margin-top: 3rem;
       padding: 1rem 0;
-      font-size: 0.95rem;
-      color: #555;
+      font-size: 0.88rem;
+      color: #888;
     }
     @media (max-width: 600px) {
       .profile-pic { width: 100px; height: 100px; }
@@ -51,15 +77,16 @@
   <img src="pfp.jpg" alt="Profile Picture" class="profile-pic" />
   <div class="center-text">
     <h1>Karthik Krishna</h1>
-    <div class="subtitle">Mathematics, IISER Mohali</div>
-    <p>
-      <a href="mailto:your@email.com">email</a> |
-      <a href="experience.html">experience</a> |
-      <a href="projects.html">projects</a> |
-      <a href="beyond_work.html">beyond work</a> |
-      <a href="https://linkedin.com/in/">linkedin</a> |
+    <div class="subtitle">Mathematics · IISER Mohali</div>
+    <nav class="nav-pills">
+      <a href="mailto:your@email.com">email</a>
+      <a href="experience.html">experience</a>
+      <a href="projects.html">projects</a>
+      <a href="writing.html">writing</a>
+      <a href="beyond_work.html">beyond work</a>
+      <a href="https://linkedin.com/in/">linkedin</a>
       <a href="https://github.com/">github</a>
-    </p>
+    </nav>
   </div>
   <div class="abstract">
     <strong>About Me</strong>
@@ -71,8 +98,7 @@
     </p>
   </div>
   <footer>
-    &copy; 2025 Karthik Krishna. You may use, share, and adapt with credit.
-    This website was inspired from <a href="https://latex.vercel.app/">here</a>.
+    &copy; 2025 Karthik Krishna. Inspired by <a href="https://latex.vercel.app/">latex.css</a>.
   </footer>
 </body>
 </html>

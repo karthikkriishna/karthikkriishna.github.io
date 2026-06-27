@@ -8,89 +8,190 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     body {
-      font-size: 1.1rem;
-      max-width: 800px;
+      font-size: 1.05rem;
+      max-width: 860px;
       margin: 0 auto;
       padding: 2rem 1.5rem;
       background: #f9f9f9;
-      color: #333;
-      line-height: 1.7;
+      color: #222;
+      line-height: 1.75;
     }
-    h1 { font-size: 1.8rem; margin-bottom: 2rem; text-align: center; }
-    h2 {
-      font-size: 1.35rem;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #ddd;
+
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; text-align: center; }
+
+    .page-subtitle {
+      text-align: center;
+      font-variant: small-caps;
+      color: #555;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
     }
-    h3 { font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; }
-    p { margin-bottom: 1rem; }
-    section {
+
+    .section-label {
+      font-size: 0.75rem;
+      font-variant: small-caps;
+      letter-spacing: 0.12em;
+      color: #888;
+      text-transform: uppercase;
+      margin: 2.5rem 0 1rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .entry-date {
+      font-size: 0.82rem;
+      color: #888;
+      padding-top: 0.15rem;
+      line-height: 1.5;
+      text-align: right;
+      font-style: italic;
+    }
+
+    .entry-box {
       background: white;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
+
+    .entry-box h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.2rem 0;
+    }
+
+    .entry-box .role {
+      font-size: 0.88rem;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .entry-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .skill-tag {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 0.2rem 0.75rem;
+      font-size: 0.8rem;
+      color: #444;
+    }
+
     .nav-links {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2rem;
     }
+
     .go-back {
       display: inline-block;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.9rem;
       background: #333;
       color: white !important;
       text-decoration: none;
-      border-radius: 4px;
-      transition: background 0.3s;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background 0.2s;
     }
-    .go-back:hover { background: #555; color: white !important; text-decoration: none; font-size: 1em; }
+    .go-back:hover { background: #555; font-size: 0.9rem; }
+
     a:hover { font-size: 1.05em; }
+
     footer {
       text-align: center;
       margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid #ddd;
-      font-size: 0.95rem;
-      color: #555;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.9rem;
+      color: #888;
     }
-    @media (max-width: 500px) {
-      body { padding: 1rem; font-size: 1rem; }
-      h1 { font-size: 1.4rem; }
-      h2 { font-size: 1.15rem; }
+
+    @media (max-width: 580px) {
+      .entry { grid-template-columns: 1fr; }
+      .entry-date { text-align: left; margin-bottom: 0.4rem; }
+      body { padding: 1rem; }
     }
   </style>
 </head>
 <body>
   <div class="nav-links">
-    <a href="index.html" class="go-back">← Go Back</a>
-    <a href="index.html" class="go-back">Home</a>
+    <a href="index.html" class="go-back">← back</a>
+    <a href="index.html" class="go-back">home</a>
   </div>
-  <main>
-    <h1>Experience</h1>
-    <section>
-      <h2>Research & Internships</h2>
-      <h3>Your Position – Institution – Year</h3>
-      <p>
-        Description of what you worked on. Replace this with your actual experience.
-      </p>
-      <h3>Another Role – Institution – Year</h3>
-      <p>
-        Description of what you worked on. You can add as many of these as you need.
-      </p>
-    </section>
-    <section>
-      <h2>Teaching & Academic</h2>
-      <h3>Teaching Assistant / Course – Year</h3>
-      <p>
-        Any teaching, tutoring, or academic assistance roles can go here.
-      </p>
-    </section>
-  </main>
+
+  <h1>Karthik Krishna</h1>
+  <div class="page-subtitle">experience &amp; background</div>
+
+  <div class="section-label">Education</div>
+
+  <div class="entry">
+    <div class="entry-date">2023 – 2028</div>
+    <div class="entry-box">
+      <h3>IISER Mohali</h3>
+      <div class="role">BS-MS, Mathematics</div>
+      <p>Five-year integrated programme. Interests in developmental economics and evolutionary game theory alongside the core mathematics curriculum.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Research & Internships</div>
+
+  <div class="entry">
+    <div class="entry-date">Add date</div>
+    <div class="entry-box">
+      <h3>Institution / Organisation</h3>
+      <div class="role">Role — Mentor: Prof. Name</div>
+      <p>What you worked on. Replace this with your actual experience.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Add date</div>
+    <div class="entry-box">
+      <h3>Institution / Organisation</h3>
+      <div class="role">Role</div>
+      <p>Description of another position. Add as many entries as you need by copying the block above.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Technical Skills</div>
+
+  <div class="entry">
+    <div class="entry-date"></div>
+    <div class="entry-box">
+      <div class="role">Mathematics &amp; Computing</div>
+      <div class="skills-grid">
+        <span class="skill-tag">Real Analysis</span>
+        <span class="skill-tag">Linear Algebra</span>
+        <span class="skill-tag">Game Theory</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">LaTeX</span>
+        <span class="skill-tag">R</span>
+      </div>
+    </div>
+  </div>
+
   <footer>&copy; 2025 Karthik Krishna</footer>
 </body>
 </html>

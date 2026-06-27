@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Karthik Krishna | Writing</title>
+  <link rel="stylesheet" href="https://latex.vercel.app/style.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-size: 1.05rem;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.75;
+    }
+
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; text-align: center; }
+
+    .page-subtitle {
+      text-align: center;
+      font-variant: small-caps;
+      color: #555;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-variant: small-caps;
+      letter-spacing: 0.12em;
+      color: #888;
+      text-transform: uppercase;
+      margin: 2.5rem 0 1rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .writing-entry {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .writing-date {
+      font-size: 0.82rem;
+      color: #999;
+      padding-top: 0.2rem;
+      text-align: right;
+      font-style: italic;
+    }
+
+    .writing-box {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s;
+    }
+
+    .writing-box:hover {
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .writing-box a {
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #222;
+    }
+
+    .writing-box a:hover {
+      text-decoration: underline;
+      font-size: 1rem;
+    }
+
+    .writing-box .tag {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-variant: small-caps;
+      letter-spacing: 0.06em;
+      color: #888;
+      background: #f0f0f0;
+      border-radius: 20px;
+      padding: 0.1rem 0.6rem;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .writing-box p {
+      margin: 0.4rem 0 0 0;
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .go-back {
+      display: inline-block;
+      padding: 0.4rem 0.9rem;
+      background: #333;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .go-back:hover { background: #555; font-size: 0.9rem; }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 580px) {
+      .writing-entry { grid-template-columns: 1fr; }
+      .writing-date { text-align: left; margin-bottom: 0.3rem; }
+      body { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-links">
+    <a href="index.html" class="go-back">← back</a>
+    <a href="index.html" class="go-back">home</a>
+  </div>
+
+  <h1>Karthik Krishna</h1>
+  <div class="page-subtitle">writing</div>
+
+  <div class="section-label">Essays &amp; Notes</div>
+
+  <div class="writing-entry">
+    <div class="writing-date">Jun 2025</div>
+    <div class="writing-box">
+      <a href="post1.html">Your first post title goes here</a>
+      <span class="tag">essay</span>
+      <p>A one-line description of what this piece is about. Replace with your actual writing.</p>
+    </div>
+  </div>
+
+  <div class="writing-entry">
+    <div class="writing-date">Add date</div>
+    <div class="writing-box">
+      <a href="#">Another piece</a>
+      <span class="tag">note</span>
+      <p>Short description. Add more entries by copying the block above.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Technical</div>
+
+  <div class="writing-entry">
+    <div class="writing-date">Add date</div>
+    <div class="writing-box">
+      <a href="#">A technical write-up</a>
+      <span class="tag">math</span>
+      <p>Something more formal — a proof, a derivation, a paper summary.</p>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Karthik Krishna</footer>
+</body>
+</html>

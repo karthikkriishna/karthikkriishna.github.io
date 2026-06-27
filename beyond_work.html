@@ -41,7 +41,22 @@
       margin-bottom: 1rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
-    .box p { margin: 0; font-size: 0.95rem; color: #444; }
+    .box p { margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #444; }
+    .box p:last-child { margin-bottom: 0; }
+    .teams {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+    .team-tag {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.82rem;
+      color: #333;
+    }
     ul { margin: 0.5rem 0 0 1.2rem; padding: 0; }
     li { margin-bottom: 0.3rem; font-size: 0.95rem; color: #444; }
     .nav-links {
@@ -79,22 +94,30 @@
   <h1>Karthik Krishna</h1>
   <div class="page-subtitle">beyond work</div>
 
-  <div class="section-label">Fitness</div>
+  <div class="section-label">Cinema</div>
   <div class="box">
-    <p>Running and training are a consistent part of life outside the classroom. I set concrete goals and track them — it keeps you honest when the semester gets busy.</p>
+    <p>I watch a lot of films. Add a Letterboxd link or a few favourites here.</p>
+  </div>
+
+  <div class="section-label">Sports</div>
+  <div class="box">
+    <p>I am an avid sports fan, playing following basically any sport i get to watch, cricket, football and tennis form a huge part of my life</p>
+    <div class="teams">
+      <span class="team-tag">Royal Challengers Bengaluru</span>
+      <span class="team-tag">FC Barcelona</span>
+      <span class="team-tag">Scuderia Ferrari</span>
+    </div>
   </div>
 
   <div class="section-label">Reading</div>
   <div class="box">
-    <p>I read widely across economics, history, and mathematics. I'm especially drawn to books that sit at the boundary of disciplines — the kind a mathematician and a development economist might both find interesting for completely different reasons.</p>
+    <p>Mostly economics, history, and math-adjacent stuff. Add books or authors you like here.</p>
   </div>
 
-  <div class="section-label">Interesting Links</div>
+  <div class="section-label">Links</div>
   <div class="box">
     <ul>
-      <li><a href="#">A thread or article you found interesting</a></li>
-      <li><a href="#">Another link worth sharing</a></li>
-      <li><a href="#">Add your own here</a></li>
+      <li><a href="#">Add something worth reading</a></li>
     </ul>
   </div>
 

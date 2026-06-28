@@ -7,165 +7,223 @@
   <link rel="stylesheet" href="https://latex.vercel.app/style.css" />
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
     body {
-      font-size: 1.1rem;
+      font-size: 1rem;
       background: #f9f9f9;
       color: #222;
+      margin: 0;
+      padding: 0;
     }
+
+    .topnav {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.4rem 1.5rem 0;
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .topnav a {
+      text-decoration: none;
+      color: #555;
+      transition: color 0.15s;
+    }
+
+    .topnav a:hover { color: #111; font-size: 0.9rem; }
 
     .wrapper {
-      max-width: 680px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 3.5rem 1.5rem 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 2.5rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    .profile-pic {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #bbb;
-      animation: fadeIn 0.8s ease both;
+    /* ── SIDEBAR ── */
+    .sidebar h1 {
+      font-size: 1.5rem;
+      margin: 0 0 0.2rem 0;
+      line-height: 1.2;
+    }
+
+    .sidebar .subtitle {
+      font-size: 0.78rem;
+      font-variant: small-caps;
+      letter-spacing: 0.09em;
+      color: #999;
       margin-bottom: 1.2rem;
     }
 
-    h1 {
-      font-size: 2rem;
-      margin: 0 0 0.2rem 0;
-      text-align: center;
-      animation: fadeUp 0.7s ease 0.1s both;
+    .profile-pic {
+      width: 100%;
+      max-width: 160px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      display: block;
+      margin-bottom: 1.2rem;
     }
 
-    .subtitle {
-      font-size: 0.9rem;
-      font-variant: small-caps;
-      letter-spacing: 0.1em;
-      color: #777;
-      text-align: center;
-      margin-bottom: 1.6rem;
-      animation: fadeUp 0.7s ease 0.2s both;
+    .sidebar-block {
+      margin-bottom: 1.4rem;
     }
 
-    .divider {
-      width: 36px;
-      height: 1px;
-      background: #ccc;
-      margin: 0 auto 1.6rem auto;
-      animation: fadeIn 0.7s ease 0.3s both;
-    }
-
-    .nav-pills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.45rem;
-      margin-bottom: 2.5rem;
-      animation: fadeUp 0.7s ease 0.3s both;
-    }
-
-    .nav-pills a {
-      display: inline-block;
-      padding: 0.28rem 0.85rem;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      text-decoration: none;
-      color: #444;
-      transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.15s;
-    }
-
-    .nav-pills a:hover {
-      background: #222;
-      color: white;
-      border-color: #222;
-      transform: translateY(-1px);
-      font-size: 0.85rem;
-    }
-
-    .about {
-      background: white;
-      border: 1px solid #e8e8e8;
-      border-radius: 10px;
-      padding: 1.4rem 1.6rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-      text-align: left;
-      font-size: 0.97rem;
-      color: #333;
-      line-height: 1.8;
-      animation: fadeUp 0.7s ease 0.4s both;
-    }
-
-    .about-label {
-      font-size: 0.72rem;
+    .sidebar-block .label {
+      font-size: 0.7rem;
       font-variant: small-caps;
       letter-spacing: 0.12em;
-      color: #aaa;
-      margin-bottom: 0.6rem;
+      color: #bbb;
+      margin-bottom: 0.4rem;
     }
 
-    .about p { margin: 0; }
+    .sidebar-block p, .sidebar-block a {
+      font-size: 0.85rem;
+      color: #555;
+      margin: 0 0 0.2rem 0;
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar-block a:hover { color: #111; font-size: 0.85rem; }
+
+    .now-list {
+      list-style: disc;
+      padding-left: 1.1rem;
+      margin: 0;
+    }
+
+    .now-list li {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── MAIN ── */
+    .main h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.7rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #e0e0e0;
+      font-variant: small-caps;
+      letter-spacing: 0.06em;
+      color: #444;
+    }
+
+    .main p {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: #333;
+      margin-bottom: 1.4rem;
+    }
+
+    .main section {
+      margin-bottom: 2.2rem;
+    }
+
+    .last-updated {
+      font-size: 0.8rem;
+      color: #bbb;
+      margin-top: 2rem;
+    }
 
     footer {
-      text-align: center;
-      margin-top: 2.5rem;
-      font-size: 0.85rem;
-      color: #aaa;
-      animation: fadeIn 1s ease 0.6s both;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #ccc;
     }
 
-    footer a { color: #aaa; }
-    footer a:hover { color: #555; font-size: 0.85rem; }
+    footer a { color: #ccc; }
+    footer a:hover { color: #888; font-size: 0.8rem; }
 
-    @media (max-width: 500px) {
-      h1 { font-size: 1.6rem; }
-      .wrapper { padding: 2rem 1rem; }
+    @media (max-width: 620px) {
+      .wrapper { grid-template-columns: 1fr; gap: 1.5rem; }
+      .topnav { padding-top: 1rem; }
+      .profile-pic { max-width: 100px; }
     }
   </style>
 </head>
 <body>
+
+  <nav class="topnav">
+    <a href="index.html">about</a>
+    <a href="experience.html">experience</a>
+    <a href="projects.html">projects</a>
+    <a href="writing.html">writing</a>
+    <a href="beyond_work.html">beyond work</a>
+  </nav>
+
   <div class="wrapper">
-    <img src="pfp.jpeg" alt="Karthik Krishna" class="profile-pic" />
-    <h1>Karthik Krishna</h1>
-    <div class="subtitle">Mathematics · IISER Mohali</div>
-    <div class="divider"></div>
-    <nav class="nav-pills">
-      <a href="mailto:your@email.com">email</a>
-      <a href="experience.html">experience</a>
-      <a href="projects.html">projects</a>
-      <a href="writing.html">writing</a>
-      <a href="beyond_work.html">beyond work</a>
-      <a href="https://linkedin.com/in/">linkedin</a>
-      <a href="https://github.com/karthikkriishna">github</a>
-    </nav>
-    <div class="about">
-      <div class="about-label">about</div>
-      <p>
-        I am a third-year Mathematics undergraduate at <a href="https://www.iisermohali.ac.in/">IISER Mohali</a>.
-        My interests lie at the intersection of mathematics and the social sciences —
-        particularly developmental economics and evolutionary game theory.
-      </p>
-      <p>
-        As for this site (or as long as it stays in this iteration),
-        I've mostly designed it so that I can share a bit more about myself and what I think is cool. 
-        Feel free to click around and if you have any specific questions feel free to contact me!
-      </p>
-    </div>
-    <footer>
-      &copy; 2025 Karthik Krishna · built with <a href="https://latex.vercel.app/">latex.css</a>
-    </footer>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h1>Karthik Krishna</h1>
+      <div class="subtitle">Mathematics · IISER Mohali</div>
+      <img src="pfp.jpeg" alt="Karthik Krishna" class="profile-pic" />
+
+      <div class="sidebar-block">
+        <div class="label">Email</div>
+        <a href="mailto:your@email.com">your@email.com</a>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="label">Links</div>
+        <a href="https://linkedin.com/in/">linkedin</a>
+        <a href="https://github.com/karthikkriishna">github</a>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="label">Location</div>
+        <p>Mohali, India</p>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="label">Now</div>
+        <ul class="now-list">
+          <li>Add what you're currently working on</li>
+          <li>Or reading, or thinking about</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <section>
+        <h2>About</h2>
+        <p>
+          Hey! I'm Karthik, a third-year Mathematics undergraduate at <a href="https://www.iisermohali.ac.in/">IISER Mohali</a>.
+          My interests sit at the intersection of mathematics and the social sciences — particularly
+          developmental economics and evolutionary game theory. I'm drawn to questions about how
+          agents interact and what that implies for economic and social outcomes.
+        </p>
+        <p>
+          Outside academics, I watch a lot of films and follow cricket, football, and F1 more
+          seriously than I probably should. Feel free to click around, and reach out if you want to talk.
+        </p>
+      </section>
+
+      <section>
+        <h2>Research Interests</h2>
+        <p>
+          I'm broadly interested in evolutionary game theory — particularly replicator dynamics
+          and the emergence of cooperation — and in how tools from mathematics can shed light on
+          questions in development economics. Add more detail here as your interests sharpen.
+        </p>
+      </section>
+
+      <div class="last-updated">Last updated: June 2025</div>
+    </main>
+
   </div>
+
+  <footer>
+    &copy; 2025 Karthik Krishna · built with <a href="https://latex.vercel.app/">latex.css</a>
+  </footer>
+
 </body>
 </html>

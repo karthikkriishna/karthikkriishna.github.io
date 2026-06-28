@@ -16,11 +16,9 @@
     }
 
     .topnav {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.4rem 1.5rem 0;
+      padding: 1.4rem 2.5rem 0;
       display: flex;
-      gap: 1.2rem;
+      gap: 1.4rem;
       font-size: 0.9rem;
     }
 
@@ -33,12 +31,10 @@
     .topnav a:hover { color: #111; font-size: 0.9rem; }
 
     .wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 3rem;
+      padding: 2.5rem 2.5rem 3rem;
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 3rem;
+      grid-template-columns: 220px 1fr;
+      gap: 2.5rem;
       align-items: start;
     }
 
@@ -59,28 +55,32 @@
 
     .profile-pic {
       width: 100%;
-      max-width: 160px;
       aspect-ratio: 1;
       object-fit: cover;
       border-radius: 8px;
       border: 1px solid #ddd;
       display: block;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
-    .sidebar-block {
-      margin-bottom: 1.4rem;
+    .sidebar-card {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 0.8rem;
     }
 
-    .sidebar-block .label {
-      font-size: 0.7rem;
+    .sidebar-card .label {
+      font-size: 0.68rem;
       font-variant: small-caps;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
       color: #bbb;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
 
-    .sidebar-block p, .sidebar-block a {
+    .sidebar-card p, .sidebar-card a {
       font-size: 0.85rem;
       color: #555;
       margin: 0 0 0.2rem 0;
@@ -88,7 +88,8 @@
       text-decoration: none;
     }
 
-    .sidebar-block a:hover { color: #111; font-size: 0.85rem; }
+    .sidebar-card p:last-child { margin-bottom: 0; }
+    .sidebar-card a:hover { color: #111; font-size: 0.85rem; }
 
     .now-list {
       list-style: disc;
@@ -99,41 +100,47 @@
     .now-list li {
       font-size: 0.85rem;
       color: #555;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
     }
 
     /* ── MAIN ── */
-    .main h2 {
-      font-size: 1.1rem;
-      margin: 0 0 0.7rem 0;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid #e0e0e0;
-      font-variant: small-caps;
-      letter-spacing: 0.06em;
-      color: #444;
+    .main-card {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 1rem;
     }
 
-    .main p {
+    .main-card h2 {
+      font-size: 1rem;
+      margin: 0 0 0.8rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #ebebeb;
+      font-variant: small-caps;
+      letter-spacing: 0.07em;
+      color: #555;
+    }
+
+    .main-card p {
       font-size: 0.97rem;
       line-height: 1.85;
       color: #333;
-      margin-bottom: 1.4rem;
+      margin: 0 0 1rem 0;
     }
 
-    .main section {
-      margin-bottom: 2.2rem;
-    }
+    .main-card p:last-child { margin-bottom: 0; }
 
     .last-updated {
-      font-size: 0.8rem;
-      color: #bbb;
-      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: #ccc;
+      margin-top: 0.5rem;
+      padding-left: 0.2rem;
     }
 
     footer {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 1.5rem 2rem;
+      padding: 0 2.5rem 2rem;
       font-size: 0.8rem;
       color: #ccc;
     }
@@ -141,10 +148,10 @@
     footer a { color: #ccc; }
     footer a:hover { color: #888; font-size: 0.8rem; }
 
-    @media (max-width: 620px) {
-      .wrapper { grid-template-columns: 1fr; gap: 1.5rem; }
-      .topnav { padding-top: 1rem; }
-      .profile-pic { max-width: 100px; }
+    @media (max-width: 680px) {
+      .wrapper { grid-template-columns: 1fr; padding: 1.5rem 1.2rem; }
+      .topnav { padding: 1rem 1.2rem 0; flex-wrap: wrap; gap: 0.8rem; }
+      footer { padding: 0 1.2rem 2rem; }
     }
   </style>
 </head>
@@ -166,34 +173,34 @@
       <div class="subtitle">Mathematics · IISER Mohali</div>
       <img src="pfp.jpeg" alt="Karthik Krishna" class="profile-pic" />
 
-      <div class="sidebar-block">
+      <div class="sidebar-card">
         <div class="label">Email</div>
         <a href="mailto:your@email.com">your@email.com</a>
       </div>
 
-      <div class="sidebar-block">
+      <div class="sidebar-card">
         <div class="label">Links</div>
         <a href="https://linkedin.com/in/">linkedin</a>
         <a href="https://github.com/karthikkriishna">github</a>
       </div>
 
-      <div class="sidebar-block">
+      <div class="sidebar-card">
         <div class="label">Location</div>
         <p>Mohali, India</p>
       </div>
 
-      <div class="sidebar-block">
+      <div class="sidebar-card">
         <div class="label">Now</div>
         <ul class="now-list">
-          <li>Add what you're currently working on</li>
+          <li>Add what you're working on</li>
           <li>Or reading, or thinking about</li>
         </ul>
       </div>
     </aside>
 
     <!-- MAIN -->
-    <main class="main">
-      <section>
+    <main>
+      <div class="main-card">
         <h2>About</h2>
         <p>
           Hey! I'm Karthik, a third-year Mathematics undergraduate at <a href="https://www.iisermohali.ac.in/">IISER Mohali</a>.
@@ -205,16 +212,16 @@
           Outside academics, I watch a lot of films and follow cricket, football, and F1 more
           seriously than I probably should. Feel free to click around, and reach out if you want to talk.
         </p>
-      </section>
+      </div>
 
-      <section>
+      <div class="main-card">
         <h2>Research Interests</h2>
         <p>
           I'm broadly interested in evolutionary game theory — particularly replicator dynamics
           and the emergence of cooperation — and in how tools from mathematics can shed light on
           questions in development economics. Add more detail here as your interests sharpen.
         </p>
-      </section>
+      </div>
 
       <div class="last-updated">Last updated: June 2025</div>
     </main>

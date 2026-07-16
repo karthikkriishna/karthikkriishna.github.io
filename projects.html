@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Karthik Krishna</title>
+  <title>Karthik Krishna | Projects</title>
   <link rel="stylesheet" href="https://latex.vercel.app/style.css" />
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
@@ -13,9 +13,14 @@
       color: #222;
       margin: 0;
       padding: 0;
+      /* undo latex.css's max-width: 80ch on body */
+      max-width: 100%;
+      width: auto;
     }
 
     .topnav {
+      max-width: 1150px;
+      margin: 0 auto;
       padding: 1.4rem 2.5rem 0;
       display: flex;
       gap: 1.4rem;
@@ -31,115 +36,67 @@
     .topnav a:hover { color: #111; font-size: 0.9rem; }
 
     .wrapper {
+      max-width: 860px;
+      margin: 0 auto;
       padding: 2.5rem 2.5rem 3rem;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 2.5rem;
-      align-items: start;
     }
 
-    /* ── SIDEBAR ── */
-    .sidebar h1 {
-      font-size: 1.5rem;
+    h1 {
+      font-size: 1.6rem;
       margin: 0 0 0.2rem 0;
-      line-height: 1.2;
     }
 
-    .sidebar .subtitle {
-      font-size: 0.78rem;
+    .page-subtitle {
+      font-size: 0.8rem;
       font-variant: small-caps;
       letter-spacing: 0.09em;
       color: #999;
-      margin-bottom: 1.2rem;
+      margin-bottom: 2rem;
     }
 
-    .profile-pic {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .sidebar-card {
+    .project-card {
       background: white;
       border: 1px solid #e8e8e8;
       border-radius: 8px;
-      padding: 1rem 1.1rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      margin-bottom: 0.8rem;
-    }
-
-    .sidebar-card .label {
-      font-size: 0.68rem;
-      font-variant: small-caps;
-      letter-spacing: 0.13em;
-      color: #bbb;
-      margin-bottom: 0.45rem;
-    }
-
-    .sidebar-card p, .sidebar-card a {
-      font-size: 0.85rem;
-      color: #555;
-      margin: 0 0 0.2rem 0;
-      display: block;
-      text-decoration: none;
-    }
-
-    .sidebar-card p:last-child { margin-bottom: 0; }
-    .sidebar-card a:hover { color: #111; font-size: 0.85rem; }
-
-    .now-list {
-      list-style: disc;
-      padding-left: 1.1rem;
-      margin: 0;
-    }
-
-    .now-list li {
-      font-size: 0.85rem;
-      color: #555;
-      margin-bottom: 0.25rem;
-    }
-
-    /* ── MAIN ── */
-    .main-card {
-      background: white;
-      border: 1px solid #e8e8e8;
-      border-radius: 8px;
-      padding: 1.6rem 1.8rem;
+      padding: 1.4rem 1.6rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       margin-bottom: 1rem;
     }
 
-    .main-card h2 {
+    .project-card h2 {
       font-size: 1rem;
-      margin: 0 0 0.8rem 0;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid #ebebeb;
+      margin: 0 0 0.5rem 0;
+      color: #222;
+    }
+
+    .project-card .meta {
+      font-size: 0.75rem;
       font-variant: small-caps;
-      letter-spacing: 0.07em;
-      color: #555;
+      letter-spacing: 0.1em;
+      color: #bbb;
+      margin-bottom: 0.6rem;
     }
 
-    .main-card p {
-      font-size: 0.97rem;
-      line-height: 1.85;
+    .project-card p {
+      font-size: 0.95rem;
+      line-height: 1.8;
       color: #333;
-      margin: 0 0 1rem 0;
+      margin: 0 0 0.6rem 0;
     }
 
-    .main-card p:last-child { margin-bottom: 0; }
+    .project-card p:last-child { margin-bottom: 0; }
 
-    .last-updated {
-      font-size: 0.78rem;
-      color: #ccc;
-      margin-top: 0.5rem;
-      padding-left: 0.2rem;
+    .project-card .links a {
+      font-size: 0.85rem;
+      color: #555;
+      margin-right: 1rem;
     }
+
+    .project-card .links a:hover { color: #111; font-size: 0.85rem; }
 
     footer {
+      max-width: 860px;
+      margin: 0 auto;
       padding: 0 2.5rem 2rem;
       font-size: 0.8rem;
       color: #ccc;
@@ -149,7 +106,7 @@
     footer a:hover { color: #888; font-size: 0.8rem; }
 
     @media (max-width: 680px) {
-      .wrapper { grid-template-columns: 1fr; padding: 1.5rem 1.2rem; }
+      .wrapper { padding: 1.5rem 1.2rem; }
       .topnav { padding: 1rem 1.2rem 0; flex-wrap: wrap; gap: 0.8rem; }
       footer { padding: 0 1.2rem 2rem; }
     }
@@ -166,66 +123,29 @@
   </nav>
 
   <div class="wrapper">
+    <h1>Projects</h1>
+    <div class="page-subtitle">Things I've built and explored</div>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <h1>Karthik Krishna</h1>
-      <div class="subtitle">Mathematics · IISER Mohali</div>
-      <img src="pfp.jpeg" alt="Karthik Krishna" class="profile-pic" />
-
-      <div class="sidebar-card">
-        <div class="label">Email</div>
-        <a href="mailto:your@email.com">your@email.com</a>
-      </div>
-
-      <div class="sidebar-card">
-        <div class="label">Links</div>
-        <a href="https://linkedin.com/in/">linkedin</a>
+    <div class="project-card">
+      <h2>Project title goes here</h2>
+      <div class="meta">2025 · Evolutionary Game Theory</div>
+      <p>
+        A short description of the project — what question it tackles, what you did,
+        and what came out of it. Replace this placeholder with your actual work.
+      </p>
+      <div class="links">
         <a href="https://github.com/karthikkriishna">github</a>
+        <a href="#">write-up</a>
       </div>
+    </div>
 
-      <div class="sidebar-card">
-        <div class="label">Location</div>
-        <p>Mohali, India</p>
-      </div>
-
-      <div class="sidebar-card">
-        <div class="label">Now</div>
-        <ul class="now-list">
-          <li>Add what you're working on</li>
-          <li>Or reading, or thinking about</li>
-        </ul>
-      </div>
-    </aside>
-
-    <!-- MAIN -->
-    <main>
-      <div class="main-card">
-        <h2>About</h2>
-        <p>
-          Hey! I'm Karthik, a third-year Mathematics undergraduate at <a href="https://www.iisermohali.ac.in/">IISER Mohali</a>.
-          My interests sit at the intersection of mathematics and the social sciences — particularly
-          developmental economics and evolutionary game theory. I'm drawn to questions about how
-          agents interact and what that implies for economic and social outcomes.
-        </p>
-        <p>
-          Outside academics, I watch a lot of films and follow cricket, football, and F1 more
-          seriously than I probably should. Feel free to click around, and reach out if you want to talk.
-        </p>
-      </div>
-
-      <div class="main-card">
-        <h2>Research Interests</h2>
-        <p>
-          I'm broadly interested in evolutionary game theory — particularly replicator dynamics
-          and the emergence of cooperation — and in how tools from mathematics can shed light on
-          questions in development economics. Add more detail here as your interests sharpen.
-        </p>
-      </div>
-
-      <div class="last-updated">Last updated: June 2025</div>
-    </main>
-
+    <div class="project-card">
+      <h2>Another project</h2>
+      <div class="meta">2024 · Development Economics</div>
+      <p>
+        Another placeholder. Duplicate this card for each project you want to show.
+      </p>
+    </div>
   </div>
 
   <footer>

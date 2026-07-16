@@ -8,38 +8,107 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     body {
-      font-size: 1rem;
-      background: #f9f9f9;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      /* undo latex.css's max-width: 80ch on body */
-      max-width: 100%;
-      width: auto;
-    }
-
-    .topnav {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 1.4rem 2.5rem 0;
-      display: flex;
-      gap: 1.4rem;
-      font-size: 0.9rem;
-    }
-
-    .topnav a {
-      text-decoration: none;
-      color: #555;
-      transition: color 0.15s;
-    }
-
-    .topnav a:hover { color: #111; font-size: 0.9rem; }
-
-    .wrapper {
+      font-size: 1.05rem;
       max-width: 860px;
       margin: 0 auto;
-      padding: 2.5rem 2.5rem 3rem;
+      padding: 2rem 1.5rem;
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.75;
     }
+
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; text-align: center; }
+
+    .page-subtitle {
+      text-align: center;
+      font-variant: small-caps;
+      color: #555;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-variant: small-caps;
+      letter-spacing: 0.12em;
+      color: #888;
+      text-transform: uppercase;
+      margin: 2.5rem 0 1rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .project-entry {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-date {
+      font-size: 0.82rem;
+      color: #999;
+      padding-top: 0.2rem;
+      text-align: right;
+      font-style: italic;
+    }
+
+    .project-box {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s;
+    }
+
+    .project-box:hover {
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .project-box a.title {
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #222;
+    }
+
+    .project-box a.title:hover {
+      text-decoration: underline;
+      font-size: 1rem;
+    }
+
+    .project-box .tag {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-variant: small-caps;
+      letter-spacing: 0.06em;
+      color: #888;
+      background: #f0f0f0;
+      border-radius: 20px;
+      padding: 0.1rem 0.6rem;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .project-box p {
+      margin: 0.4rem 0 0 0;
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    .project-box .links {
+      margin-top: 0.5rem;
+    }
+
+    .project-box .links a {
+      font-size: 0.82rem;
+      color: #777;
+      margin-right: 0.9rem;
+    }
+
+    .project-box .links a:hover { color: #222; font-size: 0.82rem; }
 
     .nav-links {
       display: flex;
@@ -60,121 +129,66 @@
     }
     .go-back:hover { background: #555; font-size: 0.9rem; }
 
-    h1 {
-      font-size: 1.6rem;
-      margin: 0 0 0.2rem 0;
-    }
-
-    .page-subtitle {
-      font-size: 0.8rem;
-      font-variant: small-caps;
-      letter-spacing: 0.09em;
-      color: #999;
-      margin-bottom: 2rem;
-    }
-
-    .project-card {
-      background: white;
-      border: 1px solid #e8e8e8;
-      border-radius: 8px;
-      padding: 1.4rem 1.6rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      margin-bottom: 1rem;
-    }
-
-    .project-card h2 {
-      font-size: 1rem;
-      margin: 0 0 0.5rem 0;
-      color: #222;
-    }
-
-    .project-card .meta {
-      font-size: 0.75rem;
-      font-variant: small-caps;
-      letter-spacing: 0.1em;
-      color: #bbb;
-      margin-bottom: 0.6rem;
-    }
-
-    .project-card p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: #333;
-      margin: 0 0 0.6rem 0;
-    }
-
-    .project-card p:last-child { margin-bottom: 0; }
-
-    .project-card .links a {
-      font-size: 0.85rem;
-      color: #555;
-      margin-right: 1rem;
-    }
-
-    .project-card .links a:hover { color: #111; font-size: 0.85rem; }
-
     footer {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 2.5rem 2rem;
-      font-size: 0.8rem;
-      color: #ccc;
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.9rem;
+      color: #888;
     }
 
-    footer a { color: #ccc; }
-    footer a:hover { color: #888; font-size: 0.8rem; }
-
-    @media (max-width: 680px) {
-      .wrapper { padding: 1.5rem 1.2rem; }
-      .topnav { padding: 1rem 1.2rem 0; flex-wrap: wrap; gap: 0.8rem; }
-      footer { padding: 0 1.2rem 2rem; }
+    @media (max-width: 580px) {
+      .project-entry { grid-template-columns: 1fr; }
+      .project-date { text-align: left; margin-bottom: 0.3rem; }
+      body { padding: 1rem; }
     }
   </style>
 </head>
 <body>
+  <div class="nav-links">
+    <a href="index.html" class="go-back">← back</a>
+    <a href="index.html" class="go-back">home</a>
+  </div>
 
-  <nav class="topnav">
-    <a href="index.html">about</a>
-    <a href="experience.html">experience</a>
-    <a href="projects.html">projects</a>
-    <a href="writing.html">writing</a>
-    <a href="beyond_work.html">beyond work</a>
-  </nav>
+  <h1>Projects</h1>
+  <div class="page-subtitle">things I've built &amp; explored</div>
 
-  <div class="wrapper">
-    <div class="nav-links">
-      <a href="index.html" class="go-back">← back</a>
-      <a href="index.html" class="go-back">home</a>
-    </div>
+  <div class="section-label">Research &amp; Academic</div>
 
-    <h1>Projects</h1>
-    <div class="page-subtitle">Things I've built and explored</div>
-
-    <div class="project-card">
-      <h2>Project title goes here</h2>
-      <div class="meta">2025 · Evolutionary Game Theory</div>
-      <p>
-        A short description of the project — what question it tackles, what you did,
-        and what came out of it. Replace this placeholder with your actual work.
-      </p>
+  <div class="project-entry">
+    <div class="project-date">2025</div>
+    <div class="project-box">
+      <a href="#" class="title">Project title goes here</a>
+      <span class="tag">game theory</span>
+      <p>A one-line description of the project — what question it tackles and what came out of it.</p>
       <div class="links">
         <a href="https://github.com/karthikkriishna">github</a>
         <a href="#">write-up</a>
       </div>
     </div>
+  </div>
 
-    <div class="project-card">
-      <h2>Another project</h2>
-      <div class="meta">2024 · Development Economics</div>
-      <p>
-        Another placeholder. Duplicate this card for each project you want to show.
-      </p>
+  <div class="project-entry">
+    <div class="project-date">Add date</div>
+    <div class="project-box">
+      <a href="#" class="title">Another project</a>
+      <span class="tag">economics</span>
+      <p>Short description. Add more entries by copying the block above.</p>
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 Karthik Krishna · built with <a href="https://latex.vercel.app/">latex.css</a>
-  </footer>
+  <div class="section-label">Side Projects</div>
 
+  <div class="project-entry">
+    <div class="project-date">Add date</div>
+    <div class="project-box">
+      <a href="#" class="title">A fun side project</a>
+      <span class="tag">code</span>
+      <p>Something you built for fun — a tool, a simulation, this website.</p>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Karthik Krishna</footer>
 </body>
 </html>

@@ -184,6 +184,10 @@
       padding: 0;
     }
 
+    /* latex.css numbers ol items via ::before/::marker — suppress both */
+    .toc li::before { content: none !important; }
+    .toc li::marker { content: none; }
+
     .toc li { margin-bottom: 0.55rem; }
 
     .toc a {

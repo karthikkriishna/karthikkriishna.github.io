@@ -38,9 +38,9 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-template-areas:
         "intro intro photo"
+        "intro intro now"
         "exp   proj  blog"
-        "bw    now   now"
-        "foot  foot  foot";
+        "bw    bw    foot";
       gap: 1rem;
     }
 
@@ -84,12 +84,12 @@
       grid-area: photo;
       padding: 0;
       overflow: hidden;
-      min-height: 240px;
+      align-self: start;
     }
 
     .photo img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       display: block;
     }
@@ -211,11 +211,18 @@
     .foot {
       grid-area: foot;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      padding: 1rem 1.6rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 1.2rem 1.6rem;
+    }
+
+    .foot .label {
+      font-variant: small-caps;
+      letter-spacing: 0.13em;
+      font-size: 0.7rem;
+      color: var(--faint);
     }
 
     .foot .links a {
@@ -262,9 +269,6 @@
           "foot";
         padding: 1.5rem 1rem 2rem;
       }
-      .photo { min-height: 0; }
-      .photo img { aspect-ratio: 4 / 3; }
-      .foot { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -325,14 +329,15 @@
     <section class="card now">
       <div class="label">Now</div>
       <ul>
-        <li>Add what you're working on</li>
-        <li>Or reading, or thinking about</li>
+        <li>Exploring chaos theory &amp; nonlinear dynamics</li>
+        <li>Reading around econophysics and market microstructure</li>
       </ul>
     </section>
 
     <div class="card foot">
+      <div class="label">Contact</div>
       <div class="links">
-        <a href="mailto:your@email.com">your@email.com</a><span class="sep">·</span>
+        <a href="mailto:ms24132@iisermohali.ac.in">ms24132@iisermohali.ac.in</a><span class="sep">·</span>
         <a href="https://github.com/karthikkriishna">github</a><span class="sep">·</span>
         <a href="https://linkedin.com/in/">linkedin</a>
       </div>

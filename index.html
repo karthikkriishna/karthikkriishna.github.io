@@ -5,243 +5,348 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Karthik Krishna</title>
   <link rel="stylesheet" href="https://latex.vercel.app/style.css" />
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
+    :root {
+      --desk: #eceae6;        /* pdf-viewer gray behind the page */
+      --sheet: #ffffff;
+      --sheet-edge: #dedbd3;
+      --ink: #1a1a1a;
+      --muted: #555555;
+      --faint: #8f8f8f;
+      --rule: #d9d6cf;
+      --accent: #8b1a1a;      /* latex-hyperref dark red, matches site links */
+    }
+
     body {
-      font-size: 1rem;
-      background: #f9f9f9;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      /* latex.css sets max-width: 80ch on body, which squeezes the
-         whole grid into a narrow column — undo it here */
+      /* undo latex.css body constraints */
       max-width: 100%;
       width: auto;
-    }
-
-    .topnav {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 1.4rem 2.5rem 0;
-      display: flex;
-      gap: 1.4rem;
-      font-size: 0.9rem;
-    }
-
-    .topnav a {
-      text-decoration: none;
-      color: #555;
-      transition: color 0.15s;
-    }
-
-    .topnav a:hover { color: #111; font-size: 0.9rem; }
-
-    .wrapper {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 2.5rem 2.5rem 3rem;
-      display: grid;
-      grid-template-columns: 240px minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    /* ── SIDEBAR ── */
-    .sidebar h1 {
-      font-size: 1.5rem;
-      margin: 0 0 0.2rem 0;
-      line-height: 1.2;
-      text-align: left; /* latex.css centers h1 by default */
-    }
-
-    .sidebar .subtitle {
-      font-size: 0.78rem;
-      font-variant: small-caps;
-      letter-spacing: 0.09em;
-      color: #999;
-      margin-bottom: 1.2rem;
-    }
-
-    .profile-pic {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .sidebar-card {
-      background: white;
-      border: 1px solid #e8e8e8;
-      border-radius: 8px;
-      padding: 1rem 1.1rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      margin-bottom: 0.8rem;
-    }
-
-    .sidebar-card .label {
-      font-size: 0.68rem;
-      font-variant: small-caps;
-      letter-spacing: 0.13em;
-      color: #bbb;
-      margin-bottom: 0.45rem;
-    }
-
-    .sidebar-card p, .sidebar-card a {
-      font-size: 0.85rem;
-      color: #555;
-      margin: 0 0 0.2rem 0;
-      display: block;
-      text-decoration: none;
-    }
-
-    .sidebar-card p:last-child { margin-bottom: 0; }
-    .sidebar-card a:hover { color: #111; font-size: 0.85rem; }
-
-    .now-list {
-      list-style: disc;
-      padding-left: 1.1rem;
       margin: 0;
-    }
-
-    .now-list li {
-      font-size: 0.85rem;
-      color: #555;
-      margin-bottom: 0.25rem;
-    }
-
-    /* ── MAIN ── */
-    .main-card {
-      background: white;
-      border: 1px solid #e8e8e8;
-      border-radius: 8px;
-      padding: 1.6rem 1.8rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      margin-bottom: 1rem;
-    }
-
-    .main-card h2 {
+      padding: 0;
+      background: var(--desk);
+      color: var(--ink);
       font-size: 1rem;
-      margin: 0 0 0.8rem 0;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid #ebebeb;
+    }
+
+    /* ── the sheet ── */
+    .sheet {
+      max-width: 700px;
+      margin: 3rem auto 3.5rem;
+      background: var(--sheet);
+      border: 1px solid var(--sheet-edge);
+      box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+      padding: 3.5rem 4rem 2.5rem;
+      animation: settle 0.5s ease-out;
+    }
+
+    @keyframes settle {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sheet { animation: none; }
+    }
+
+    /* ── title block ── */
+    .title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 0 0 1.2rem;
+      line-height: 1.25;
+    }
+
+    .authorline {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0.4rem;
+    }
+
+    .authorline .affil {
+      font-style: italic;
+    }
+
+    .dateline {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--faint);
+      margin-bottom: 2.2rem;
+    }
+
+    .contact {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover { text-decoration: underline; }
+
+    .contact .sep { color: var(--faint); margin: 0 0.5rem; }
+
+    /* ── figure ── */
+    figure {
+      margin: 0 auto 2.4rem;
+      text-align: center;
+    }
+
+    figure img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      display: block;
+      margin: 0 auto 0.6rem;
+    }
+
+    figcaption {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    figcaption .figlabel { font-weight: 700; }
+
+    /* ── abstract ── */
+    .abstract {
+      max-width: 540px;
+      margin: 0 auto 1.6rem;
+      font-size: 0.93rem;
+      line-height: 1.8;
+      color: #2a2a2a;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .abstract .runin {
+      display: block;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.02em;
+    }
+
+    .abstract p { margin: 0 0 0.8rem; }
+    .abstract p:last-child { margin-bottom: 0; }
+
+    .abstract a { color: var(--accent); }
+
+    .keywords {
+      max-width: 540px;
+      margin: 0 auto 1.4rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .keywords .kwlabel { font-style: italic; }
+
+    .equation {
+      max-width: 540px;
+      margin: 0 auto 2.6rem;
+      display: flex;
+      align-items: baseline;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .equation .math {
+      flex: 1;
+      text-align: center;
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+
+    .equation .eqno { font-style: normal; color: var(--faint); }
+
+    /* ── contents / nav ── */
+    .contents {
+      max-width: 540px;
+      margin: 0 auto 2.8rem;
+    }
+
+    .contents h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      text-align: left;
+    }
+
+    .toc {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toc li { margin-bottom: 0.55rem; }
+
+    .toc a {
+      display: flex;
+      align-items: baseline;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.98rem;
+    }
+
+    .toc .num {
+      width: 1.6rem;
+      color: var(--muted);
+    }
+
+    .toc .leader {
+      flex: 1;
+      border-bottom: 1px dotted #b5b1a8;
+      margin: 0 0.55rem;
+      transform: translateY(-4px);
+    }
+
+    .toc .desc {
       font-variant: small-caps;
-      letter-spacing: 0.07em;
-      color: #555;
-    }
-
-    .main-card p {
-      font-size: 0.97rem;
-      line-height: 1.85;
-      color: #333;
-      margin: 0 0 1rem 0;
-    }
-
-    .main-card p:last-child { margin-bottom: 0; }
-
-    .last-updated {
-      font-size: 0.78rem;
-      color: #ccc;
-      margin-top: 0.5rem;
-      padding-left: 0.2rem;
-    }
-
-    footer {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 0 2.5rem 2rem;
+      letter-spacing: 0.08em;
       font-size: 0.8rem;
-      color: #ccc;
+      color: var(--faint);
     }
 
-    footer a { color: #ccc; }
-    footer a:hover { color: #888; font-size: 0.8rem; }
+    .toc a:hover .toc-title,
+    .toc a:focus-visible .toc-title { color: var(--accent); }
+    .toc a:hover .desc,
+    .toc a:focus-visible .desc { color: var(--accent); }
 
-    @media (max-width: 680px) {
-      .wrapper { grid-template-columns: 1fr; padding: 1.5rem 1.2rem; }
-      .topnav { padding: 1rem 1.2rem 0; flex-wrap: wrap; gap: 0.8rem; }
-      footer { padding: 0 1.2rem 2rem; }
+    .toc a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* ── footnote + page number ── */
+    .footnote {
+      max-width: 540px;
+      margin: 0 auto;
+      padding-top: 0.7rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .footnote a { color: var(--accent); text-decoration: none; }
+    .footnote a:hover { text-decoration: underline; }
+
+    .pageno {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--faint);
+      margin-top: 2.4rem;
+    }
+
+    /* ── responsive ── */
+    @media (max-width: 740px) {
+      .sheet {
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        padding: 2.5rem 1.4rem 2rem;
+      }
+      .abstract { text-align: left; }
+      .title { font-size: 1.65rem; }
+      .toc .desc { display: none; }
+      .toc .leader { display: none; }
+      .toc a .toc-title { color: var(--accent); }
     }
   </style>
 </head>
 <body>
 
-  <nav class="topnav">
-    <a href="index.html">about</a>
-    <a href="experience.html">experience</a>
-    <a href="projects.html">projects</a>
-    <a href="writing.html">writing</a>
-    <a href="beyond_work.html">beyond work</a>
-  </nav>
+  <main class="sheet">
 
-  <div class="wrapper">
+    <h1 class="title">Karthik Krishna</h1>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <h1>Karthik Krishna</h1>
-      <div class="subtitle">Mathematics · IISER Mohali</div>
-      <img src="pfp.jpeg" alt="Karthik Krishna" class="profile-pic" />
+    <div class="authorline">
+      <span class="affil">Department of Mathematical Sciences, IISER Mohali</span><br/>
+      Mohali, Punjab, India
+    </div>
 
-      <div class="sidebar-card">
-        <div class="label">Email</div>
-        <a href="mailto:your@email.com">your@email.com</a>
-      </div>
+    <div class="dateline">July 2026</div>
 
-      <div class="sidebar-card">
-        <div class="label">Links</div>
-        <a href="https://linkedin.com/in/">linkedin</a>
-        <a href="https://github.com/karthikkriishna">github</a>
-      </div>
+    <div class="contact">
+      <a href="mailto:your@email.com">your@email.com</a><span class="sep">·</span>
+      <a href="https://github.com/karthikkriishna">github</a><span class="sep">·</span>
+      <a href="https://linkedin.com/in/">linkedin</a>
+    </div>
 
-      <div class="sidebar-card">
-        <div class="label">Location</div>
-        <p>Mohali, India</p>
-      </div>
+    <figure>
+      <img src="pfp.jpg" alt="Karthik Krishna in a bucket hat" />
+      <figcaption><span class="figlabel">Figure 1:</span> The author, conducting field research.</figcaption>
+    </figure>
 
-      <div class="sidebar-card">
-        <div class="label">Now</div>
-        <ul class="now-list">
-          <li>Add what you're working on</li>
-          <li>Or reading, or thinking about</li>
-        </ul>
-      </div>
-    </aside>
+    <div class="abstract">
+      <span class="runin">Abstract</span>
+      <p>
+        I'm a third-year Mathematics undergraduate at
+        <a href="https://www.iisermohali.ac.in/">IISER Mohali</a>. My interests sit at the
+        intersection of mathematics and the social sciences — particularly developmental
+        economics and evolutionary game theory. I'm drawn to questions about how agents
+        interact, and what that implies for economic and social outcomes.
+      </p>
+      <p>
+        Outside academics, I watch a lot of films and follow cricket, football, and F1
+        more seriously than I probably should. Click around, and reach out if you want to talk.
+      </p>
+    </div>
 
-    <!-- MAIN -->
-    <main>
-      <div class="main-card">
-        <h2>About</h2>
-        <p>
-          Hey! I'm Karthik, a third-year Mathematics undergraduate at <a href="https://www.iisermohali.ac.in/">IISER Mohali</a>.
-          My interests sit at the intersection of mathematics and the social sciences — particularly
-          developmental economics and evolutionary game theory. I'm drawn to questions about how
-          agents interact and what that implies for economic and social outcomes.
-        </p>
-        <p>
-          Outside academics, I watch a lot of films and follow cricket, football, and F1 more
-          seriously than I probably should. Feel free to click around, and reach out if you want to talk.
-        </p>
-      </div>
+    <div class="keywords">
+      <span class="kwlabel">Keywords:</span> evolutionary game theory, replicator dynamics,
+      development economics, cooperation, cinema, cricket.
+    </div>
 
-      <div class="main-card">
-        <h2>Research Interests</h2>
-        <p>
-          I'm broadly interested in evolutionary game theory — particularly replicator dynamics
-          and the emergence of cooperation — and in how tools from mathematics can shed light on
-          questions in development economics. Add more detail here as your interests sharpen.
-        </p>
-      </div>
+    <div class="equation" aria-hidden="true">
+      <span class="math">ẋ<sub>i</sub> = x<sub>i</sub>&thinsp;( f<sub>i</sub>(x) − f̄(x) )</span>
+      <span class="eqno">(1)</span>
+    </div>
 
-      <div class="last-updated">Last updated: June 2025</div>
-    </main>
+    <nav class="contents" aria-label="Site navigation">
+      <h2>Contents</h2>
+      <ol class="toc">
+        <li>
+          <a href="experience.html">
+            <span class="num">1</span><span class="toc-title">Experience</span>
+            <span class="leader"></span><span class="desc">cv</span>
+          </a>
+        </li>
+        <li>
+          <a href="projects.html">
+            <span class="num">2</span><span class="toc-title">Projects</span>
+            <span class="leader"></span><span class="desc">builds</span>
+          </a>
+        </li>
+        <li>
+          <a href="writing.html">
+            <span class="num">3</span><span class="toc-title">Blog</span>
+            <span class="leader"></span><span class="desc">essays</span>
+          </a>
+        </li>
+        <li>
+          <a href="beyond_work.html">
+            <span class="num">4</span><span class="toc-title">Beyond work</span>
+            <span class="leader"></span><span class="desc">misc</span>
+          </a>
+        </li>
+      </ol>
+    </nav>
 
-  </div>
+    <div class="footnote">
+      Correspondence: <a href="mailto:your@email.com">your@email.com</a>.
+      Built with <a href="https://latex.vercel.app/">latex.css</a>. &copy; 2026 Karthik Krishna.
+    </div>
 
-  <footer>
-    &copy; 2025 Karthik Krishna · built with <a href="https://latex.vercel.app/">latex.css</a>
-  </footer>
+    <div class="pageno">1</div>
+
+  </main>
 
 </body>
 </html>
